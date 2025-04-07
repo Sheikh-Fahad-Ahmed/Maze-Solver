@@ -9,14 +9,15 @@ class Window:
         self.__canvas.pack(fill=BOTH, expand=1)
         self.__running = False
 
-
     def redraw(self):
         self.__root.update_idletasks()
         self.__root.update()
 
-    def draw_line(self, line, fill_color):
+    def draw_line(self, line, fill_color='black'):
         line.draw(self.__canvas, fill_color)
 
+    def get_canvas(self):
+        return self.__canvas
 
     def wait_for_close(self):
         self.__running = True
